@@ -1,0 +1,13 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Seite-1" id="62tnsvzGIT9CZjReVOAg">
+    <mxGraphModel dx="2054" dy="1121" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oU_hFvZJNsjAT5smCjxv-1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=160;" value="act Meine Aktivität" vertex="1">
+          <mxGeometry height="80" width="350" x="240" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

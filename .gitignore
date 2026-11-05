@@ -1,0 +1,15 @@
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.lol
+*.lot
+*.run.xml
+*.DS_Store
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+.texpadtmp/*
+hauptdokument.pdf

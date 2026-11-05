@@ -1,0 +1,98 @@
+\subsection{Übung: Aktivitätsdiagramme}
+
+% ------------------------------------------------------------
+
+
+\begin{situationbox}{Situation \cite{Hardy2020}}
+	Die Abteilung \dq Desktop-Entwicklung\dq~der IT-Firma ProConsult führt regelmäßig Schulungen für Kunden durch. Die Planung dieser Schulungen wird von der \textit{Vertriebsabteilung} durchgeführt. Für den Ablauf wurde vor einiger Zeit ein Programmablaufplan erstellt.
+\end{situationbox}
+
+ \begin{aufgabe}\label{task:uml_beginner}
+ 		\underline{Analysiere} den dargestellten Programmablaufplan und \underline{erstelle} ein \textbf{UML-Aktivitäts-diagramm}. 
+\end{aufgabe}
+ 		
+\begin{taskbox}{ Weitere Infos zur Aufgabenlösung}
+	\begin{itemize}
+		\item Das Buchen der Dozenten und Räume soll parallel dargestellt werden
+		\item Die Aktionen sollen in entsprechenden Swimlanes (Verantwortungsbereichen) dargestellt werden
+	\end{itemize}
+\end{taskbox}
+	 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.4\textwidth]{\imgpath/uml_activity_einfach.jpeg}
+		\caption{PAP des Prozesses Schulung für Kunden durchführen \cite{Hardy2020}}
+		\label{fig:uml_activity_einfach}
+	\end{figure}
+
+
+\newpage
+
+% ------------------------------------------------------------
+
+\begin{situationbox}{Situation}
+Die AMAG Soft AG ist ein Hersteller von Batterien und Akkus für E-Bikes, E-Scooter, Pedelecs und E-Roller. Zur jährlichen Aktionärsversammlung treffen sich die Aktionäre am Stammsitz. Die AMAG Soft AG möchte ihren Aktionären zukünftig einen E-Service mit verschiedenen Anwendungsmöglichkeiten anbieten. Zur Realisierung dieses Projekts \dq Aufbau einer E-Service-Plattform\dq~für Aktionäre der AMAG Soft AG wird eine Projektgruppe gegründet, in der Sie mitarbeiten sollen. 
+\end{situationbox}
+
+ \begin{aufgabe}\label{task:uml_mittel}
+ 		Der Einladungsvorgang zur Aktionärsversammlung soll mithilfe eines UML-Aktivitäts-diagramms dargestellt werden. \underline{Ergänze} das vorbereitete UML-Diagramm. \footnote{Quelle: IHK-Prüfung}
+ \end{aufgabe}
+ 
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{\imgpath/uml_activity_einfach_ihk_2024.png}
+%	\caption{UML}
+%	\label{fig:uml_activity_einfach_ihk_2024}
+\end{figure}
+ 
+
+\begin{taskbox}{Informationen zum Prozess}
+	\begin{itemize}
+		\item Ein Mitarbeiter des Aktionärssekretariats versendet die Einladungen gleichzeitig per Post und über die E-Service-Plattform.
+		\item Wenn ein Aktionär einen Zugang zur E-Service-Plattform hat, meldet er sich dort an und kann dabei zwischen virtueller Teilnahme und Präsenzteilnahme wählen. Hat der Aktionär keinen E-Service-Zugang, kann er nur in Präsenz teilnehmen und die Anmeldung per Post versenden. Diese postalische Anmeldung wird vom Mitarbeiter erfasst, (Der Fall, dass von einem Aktionär keine Anmeldung erfolgt, soll ignoriert werden.)
+		\item Unmittelbar nach jeder Online-Anmeldung zur Präsenzteilnahme bzw. Erfassung durch den Mitarbeiter im Aktionärssekretariat wird durch das System ein Platz für den Aktionär reserviert.
+		\item Bei virtueller Teilnahme wird kein Platz reserviert.
+		\item Nach der Reservierung versendet das System entweder die Platzkarten zusammen mit der Tagesordnung an den Aktionär oder bei virtueller Teilnahme die Zugangsdaten und die Tagesordnung.	
+	\end{itemize}
+\end{taskbox}
+
+% ------------------------------------------------------------
+\newpage 
+\begin{situationbox}{Situation}
+	Die Parkanlage \dq Wilder Garten\dq~in Köln konnte u. a. mit ihrer reichhaltigen Pflanzenvielfalt, [...] und ihren beliebten Attraktionen in der letzten Saison ihre Anziehungskraft als Naherholungsfläche für viele Besucher steigern. Besucher aus allen Altersgruppen und auch Reiseveranstalter zählen zu den Kunden der Parkanlage. 
+\end{situationbox}
+
+ \begin{aufgabe}\label{task:uml_schwer}
+ 		\underline{Analysiere} die untenstehenden Informationen und \underline{erstelle} ein UML-Aktivitätsdiagramm zum Prozess \dq Anlage neuer Pflanzungen\dq \footnote{Quelle: IHK-Prüfung}. Nutze die vorgegebenen Swimlanes.
+ \end{aufgabe}
+ 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{\imgpath/uml_activity_schwer_ihk_2023.png}
+%	\caption{UML}
+%	\label{fig:uml_activity_einfach_ihk_2024}
+\end{figure}
+
+\begin{taskbox}{Informationen zum Prozess}
+	\textbf{Sie beginnen mit einem Mitarbeiter der Gartenplanung}
+	
+	\begin{itemize}
+		\item Dieser teilt lhnen mit, dass er den Gärtnern den Auftrag zu einer neuen Pflanzung erteilt.
+		\item Wenn die Gärtner fertig gepflanzt haben, fertigt er Bilder des neuen Bereichs an. Wenn die Bilder gemacht sind und der Einkauf die Rechnung bezahlt hat, ist der Vorgang abgeschlossen.
+	\end{itemize}
+	
+	\textbf{Informationen eines Gärtners:}
+	\begin{itemize}
+		\item Wenn der Gärtner einen neuen Pflanzauftrag vom Gartenplaner erhält, stellt er zuerst die Anforderungen zusammen und sagt dem Einkauf welche Pflanzen zu bestellen sind.
+		\item Wenn Pflanzen ankommen, bekommt er diese vom Einkauf und bringt die Pflanzen in die Quarantänestation. Der Gärtner prüft täglich die Pflanzen und kontrolliert das Quarantäneende.
+		\item Ist eine Pflanze in Quarantäne erkrankt, so muss diese behandelt und die Quarantäne für alle Pflanzen verlängert werden,
+		\item sind alle Pflanzen gesund und die Quarantäne abgelaufen pflanzt der Gärtner die Pflanzen.
+		\item Nach Abschluss der Pflanzarbeiten macht die Gartenplanung noch Bilder.
+	\end{itemize}
+	
+	\textbf{Der Einkauf gibt Ihnen folgende Hinweise:}
+	\begin{itemize}
+		\item Der Gärtner teilt uns mit was er braucht, dann bestellen wir diese Pflanzen bei unserem Lieferanten. Bei Anlieferung übergeben wir die Pflanzen an den Gärtner und bezahlen die Rechnung.
+		\item Weiterhin beschreibt der Einkauf den Vorgang beim Lieferanten so, dass der Lieferant den Auftrag annimmt, danach die Lieferung zusammenstellt und dann die Pflanzen ausliefert.
+	\end{itemize}
+\end{taskbox}

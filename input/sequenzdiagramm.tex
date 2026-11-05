@@ -1,0 +1,70 @@
+\section{Sequenzdiagramm}
+
+\begin{notebox}{Einsatzzweck}
+Sequenzdiagramme setzt man ein, um das \textit{Inter}objektverhalten, also die Interaktionen zwischen den betiligten Objekten zu beschreiben. 	
+\end{notebox}
+
+\begin{tipbox}{Beispiele}
+Beispiele für den Einsatz eines Sequenzdiagramms sind:
+	\begin{itemize}
+		\item Interaktion zwischen Personen (z. B. Lehrer mit Schülern)
+		\item Ablauf von Kommunikationsprotokollen (z. B. HTTP)
+		\item Kommunikationsabläufe zwischen Anwender und Software
+		\item Kommunikationsabläufe bei einem Feueralarm an der Schule
+		\item Kommunikaitonsabläufe zwischen Objekten in einem Programm
+	\end{itemize}	
+\end{tipbox}
+
+\subsection{Übersicht}
+
+Interaktionen beschreiben den Austausch von \textit{Nachrichten} zwischen Interaktionspartnern. Diese Interaktionen beschreiben den Nachrichtenaustausch in einem bestimmten Kontext, also z. B. für die Durchführung eines bestimmten Prozesses. Für die Interkation bestehen dann ggf. bestimmte \textit{Voraussetzungen} und die Interaktion wird durch ein bestimmtes \textit{Ereignis} oder einen vorgegebenen \textit{Zeitpunkt} (z. B. 23 Uhr) ausgelöst. \\
+
+Da ein Interaktionsdiagramm nur in einem bestimmten Kontext definiert ist, werden zumeist nicht alle Interaktionen zwischen den Interaktionspartnern abgedeckt. Sprich: Falls eine bestimmte Interaktion im Diagramm nicht angezeigt wird, heißt das nicht zwangsläufig, dass diese Interkation nicht stattfindet. 
+
+\begin{importantbox}{Abgrenzung zum Aktivitätsdiagramm}
+Im Interaktionsdiagramm geht es um die Darstellung von Nachrichten zwischen Interaktionspartnern. Zwar kann man die Nachrichten durch die konkreten Daten anreichern, jedoch geht es nicht um die Darstellung dessen, wie die Daten verändert werden. Dazu würde man eher ein Aktivitätsdiagramm verwenden.	
+\end{importantbox}
+
+Als Beispiel soll das Sequenzdiagramm in Abb. \ref{fig:sd_uebung_anmelden.drawio} dienen. Das Diagramm zeigt den Anmeldevorgang für Studenten, welche sich für eine Übung zur Vorlesung anmelden möchten. Die an der Kommunikation beteiligten Kommunikationspartner sind durch Rechtecke dargestellt. Jedes Objekt hat eine \texttt{Lebenslinie}, welche vertikal verläuft. \\ 
+
+Sofern nicht anders definiert, treten Nachrichten von oben nach unten zeitlich nacheinander auf. Zunächst sind die Lebenslinien voneinander unabhängig, erst durch die Übertragung einer Nachricht, synchronisieren sich die Lebenslinien und es gelten für alle der gleiche zeitliche Rahmen. \\ 
+
+\textit{Synchrone Nachrichten} sind solche Nachrichten, auf deren Antwort der Sender wartet. Sie werden durch einen Pfeil mit durchgezogener Linie mit einem \underline{ausgefüllten Pfeil} dargestellt. Die \textit{Antwortnachricht} wird durch eine gestrichelte Linie mit \underline{nicht} ausgefülltem Pfeil symbolisiert. \textit{Asynchrone Nachrichten} sind solche Nachrichten, auf deren Antwort der Sender nicht wartet. Stattdessen geht der Sender anderen Aufgaben nach (Stichwort parallele Prozesse). 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{\imgpath/sd_uebung_anmelden.drawio.png}
+  \caption{Sequenz Übung anmelden \cite{Seidl2012}}
+  \label{fig:sd_uebung_anmelden.drawio}
+\end{figure}
+
+\subsection{Kombinierte Fragmente}
+Um nun \textbf{Kontrollstrukturen} besser abbilden zu können, gibt es sogenannte \textit{kombinierte Fragmente}. Sie werden durch Rechtecke dargestellt, deren Art durch ein Pentagon in der linken oberen Ecke spezifiziert wird. In dem Pentagon wird der \textit{Operator} eingetragen. In diesem Kurs lernen wir die \textbf{alt}- und \textbf{opt}-Operatoren kennen. \\
+
+Wie in Abb. \ref{fig:sd_uebung_anmelden.drawio} zu sehen, wird der \textbf{alt}-Operator genutzt, um alternative Interaktionen zu beschreiben. Auf einen Operator folgen ein oder mehrere \textit{Operanden}. Sie sind durch gestrichelte horizontale Linien voneinander getrennt. Im Falle des \textbf{alt}-Operators werden Überwachungsbedingungen (Guards) zur Beschreibung der verschiedenen Operanden eingesetzt (z. B. \texttt{[status==ok]}). \\ 
+
+Der \textbf{opt}-Operator zeigt eine optionale Interaktion an. Daneben gibt es auch den \textbf{loop}-Operator für die iterative Interkation (z. B. loop(1,3) für mindestens 1 und maximal 3 Interaktionen) und den \textbf{break}-Operator für die Ausnahme-Interaktion (Fehlerfall).  \footnote{UML bietet außerdem noch u.a. Nebenläufigkeits-Operatoren. Hier empfehle ich \cite{Seidl2012}}
+
+\subsection{Interaktionspartner}
+Interaktionspartner sind nach dem \texttt{objekt:Klasse}-Schema, wie bei Objektdiagrammen designed. Auf diese Weise ist es möglich, sowohl für ganz konkrete Objekte, aber auch für Klassen die Interaktionen zu modellieren. Mögliche Kombinationen sind \texttt{objekt}, \texttt{:Klasse}, \texttt{objekt:Klasse}. 
+
+\subsection{Ausführungsspezifikation}
+Die Ausführungsspezifikation wird durch ein Sendeereignis und ein Empfangsereignis beschrieben. Dies ist immer dann nötig, wenn zwischen dem Senden einer Nachricht und dem Empfang der beim Emfpänger (und zurück analog) Zeit vergeht. Das kann passieren, wenn eine Übertragung über eine langsame Leitung erfolgt oder die Generierung der Antwort Zeit benötigt (z. B. aufwändige Berechnung eines Ergebnis). In dem Fall zeichnet man einen Balken auf die Lebenslinie, um den Zeitverzug zu symbolisieren. In diesem Skript wird auf das Darstellen der Ausführungsspezifikation bei \dq kleinen Wartezeiten\dq~verzichtet. \todo{Bild einfügen, für Sende- und Empfangsereignis}
+
+\subsection{Belegsatz}
+Der Belegsatz der IHK zeigt die meisten der hier beschriebenen UML-Sprachenfeatures und darüber hinausgehende. Sequenzdiagramme haben weitere Sprachenfeatures, vrgl. \cite{Seidl2012}. Der Belegsatz ist in Abb. \ref{fig:ihk_beleg_sequenz} gezeigt.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{\imgpath/ihk_beleg_sequenz.png}
+  \caption{IHK-Belegsatz für UML-Sequenzdiagramme}
+  \label{fig:ihk_beleg_sequenz}
+\end{figure}
+
+
+
+
+
+
+
+

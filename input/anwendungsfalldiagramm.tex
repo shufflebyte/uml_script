@@ -1,0 +1,80 @@
+\section{Anwendungsfalldiagramm}
+
+\begin{notebox}{Einsatzzweck}
+	Anwendungsfalldiagramme (Use Case Diagrams) erlauben die Beschreibung von Einsatzszenarien (\dq Anwendungsfall\dq ). Es drückt aus, was das System tun soll, verzichtet dabei aber auf Realisierungsdetails wie Datenstrukturen, Algorithmen etc. Außerdem bildet das Diagramm ab, welche Funktionen welcher Nutzer tatsächlich nutzt. 	
+\end{notebox}
+
+\subsection{Übersicht}
+Der Anwendungsfall ist ein grundlegendes Konzept der \ac{OOA}. Anwendungsfälle repräsentieren \textit{funktionale Anforderungen} der Kunden an ein System und stellen diese auf einem sehr hohen Abstraktionsniveau dar. Das Anwendungsfalldiagramm klärt die folgenden Fragen für einen Sachverhalt:
+
+\begin{tipbox}{Beispiele}
+\begin{itemize}
+	\item Was wird beschrieben (\textit{System})?
+	\item Wer interagiert mit dem System (\textit{Akteur})?
+	\item Was machen die Akteure (\textit{Anwendungsfälle})?
+\end{itemize}	
+\end{tipbox}
+
+Das Anwendungsfalldiagramm besteht im Vergleich zu den anderen UML-Diagrammen nur aus sehr wenigen Symbolen und wird häufig unterschätzt. Im Folgenden soll uns das Anwendungsfalldiagramm aus Abb. \ref{fig:uc_schuelerverwaltung.drawio} dienen. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{\imgpath/uc_schuelerverwaltung.drawio.png}
+  \caption{Anwendungsfalldiagramm Schülerverwaltung}
+  \label{fig:uc_schuelerverwaltung.drawio}
+\end{figure}
+
+Ein \textit{Anwendungsfall} wird durch eine Ellipse, in der der konkrete Anwendungsfall steht, dargestellt. Er beschreibt das Verhalten, das von dem zu entwickelnden System erwartet wird. Es umfasst eine Menge von Aktionen, die im Kontext der Verwendung durchgeführt werden. Ein Anwendungsfall bringt einen \textit{sichtbaren Nutzen} für einen oder mehrere \textit{Akteure}.  \\ 
+
+Die Menge aller Anwendungsfälle beschreibt die Funktionalität des zu beschreibenden Softwaresystems. Die Anwendungsfälle werden durch ein Rechteck zusammengefasst, welche die Grenzen des zu beschreibenden Systems (hier Schülerverwaltung) aufzeigt. Die hier gezeigten Anwendungsfälle dürfen von verschiedenen \textit{Akteuren} ausgeführt werden. \\ 
+
+Ein \textit{Akteur} ist menschlich (hier durch ein Strichmännchen dargestellt) oder nichtmenschlich (z. B. ein E-Mail-Server, der durch einen Rechner dargestellt wird). Nichtmenschliche Akteure dürfen aber ebenfalls durch Strichmännchen dargestellt werden. \\ 
+
+An der Durchführung des Anwendungsfalls \textbf{Noten eintragen} ist ausschließlich ein Akteur (Klassenlehrer) beteiligt. An dem Anwendungsfall \textbf{Zeugnis ausstellen} \textit{kann} neben dem Klassenlehrer auch ein Sekretär beteiligt sein. \textit{Kann}, nicht \textit{muss} wegen der Multiplizität 0..1. Bei einer Multiplizität von 1 oder höher (bei 1 kann man die Multiplizität weglassen) müssen beide Akteure an dem Anwendungsfall beteiligt sien (z. B. Anwendungsfall Mündliche Prüfung, benötigt Lehrer und Schüler). \\ 
+
+Die Pfeile mit nicht ausgefüllten Pfeilspitzen deuten eine \textit{Generalisierung} an. Im Beispiel sind Klassenlehrer und Sekretär beide Mitarbeiter. Sie erben den Anwendungsfall \textbf{Schülerdaten abfragen} von Mitarbeiter. Zusätzlich können die jeweiligen Akteure (hier sind natürlich Gruppen gemeint) jeweils für ihr Aufgabengebiet weitere Anwendungsfälle bedienen. 
+
+\subsection{Generalisierung}
+Die Generalisierung aus Abb. \ref{fig:uc_schuelerverwaltung.drawio} soll noch einmal behandelt werden. In Abb. \ref{fig:uc_schuelerverwaltung2.drawio} ist links dargestellt, dass für den Anwendungsfall \textbf{Schülerdaten abfragen} sowohl der Klassenlehrer als auch der Sekretär nötig sind. Rechts hingegen ist die Generalisierung gezeigt, das heißt: \textbf{Schülerdaten abfragen} dürfen sowohl der Klassenlehrer als auch der Sekretär. Sie müssen aber \textbf{nicht} beide in Aktion treten.   
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{\imgpath/uc_schuelerverwaltung2.drawio.png}
+  \caption{Anwendungsfalldiagramm Generalisierung vs. mehrfacher Beteiligung}
+  \label{fig:uc_schuelerverwaltung2.drawio}
+\end{figure}
+
+\subsection{Assoziationen}
+Unter einer Assoziation versteht man die Kante, die einen Akteur mit einem Anwendungsfall verbindet. Jeder Akteur muss mit mindestens einem Anwendungsfall verbunden werden, genauso muss jeder Anwendungsfall mit mindestens einem Akteur verbunden sein. Eine Assoziation darf Multiplizitäten aufweisen. Wird eine Multiplizität 0..n (also 0..1, 0..3, 0..n) angegeben, ist die Beteiligung optional, darf dann aber bis zu 1, 3, n Beteiligungen aufweisen. Bei einer Multiplizität von 1..3 muss mindestens ein Akteur teilnehmen, maximal drei. 
+
+
+\subsection{Beziehungen zwischen Anwendungsfällen}
+Wenn ein Anwendungsfall A einen Anwendungsfall B inkludiert, dargestellt als gestrichelter Pfeil mit offener Pfeilspitze von A nach B, der mit dem Schlüsselwort \texttt{<<include>>} gekennzeichnet ist, so wird das Verhalten von B in das Verhalten von A eingebunden. Dabei wird A als Basisanwendungsfall und B als inkludierter Anwendungsfall bezeichnet. Der Basisanwendungsfall benötigt \textbf{immer} das Verhalten des inkludierten Anwendungsfalls, um seine Funktionalität anzubieten. In einer prozeduralen Programmiersprache entspricht die \texttt{<<include>>}-Beziehung dem Aufruf einer Funktion. \\ 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{\imgpath/uc_schuelerverwaltung3.drawio.png}
+  \caption{Beziehungen zwischen Anwendungsfällen}
+  \label{fig:uc_schuelerverwaltung3.drawio}
+\end{figure}
+
+In Abb. \ref{fig:uc_schuelerverwaltung3.drawio} inkludiert also der Anwendungsfall \textbf{Lehrveranstaltung anlegen} das \textbf{Lehrer zuweisen} und kann ohne Lehrer nicht angelegt werden. \\ 
+
+Jeder Anwendungsfall bleibt hier einzeln aufrufbar durch den Stundenplaner. Außerdem darf ein Basisanwendugnsfall mit beliebig vielen inkludierte Anwendungsfälle verknüpft sein. Genauso darf ein inkludierter Anwendungsfall mit beliebieg vielen Basisanwendungsfällen verknüpft sein. Hier muss aber darauf geachtet werden, dass kein \textbf{Zyklus} modelliert wird. \\ 
+
+Steht ein Anwendungsfall B mit einem Anwendungsfall A in in einer \texttt{<<extend>>}-Beziehung, darf A das Verhalten von B nutzen, muss aber nicht. B darf also von A aktiviert werden. B bezeichnet man als erweiterter Anwendungsfall.  \\ 
+
+In Abb. \ref{fig:uc_schuelerverwaltung3.drawio} ist das \textbf{Raum buchen} eine optionale Erweiterung von \textbf{Lehrveranstaltung anlegen}, kann aber auch jederzeit einzeln von dem Stundenplaner aufgerufen werden. \\ 
+
+Für jede \texttt{<<extend>>}-Beziehung darf eine Condition formuliert. Eine Condition könnte in dem Anwendungfalldiagramm z. B. wie folgt formuliert werden: \texttt{Condition: {Raum frei}}. Zur Anwendung des Symbols wird auf den Belegsatz in Abb. \ref{fig:ihk_beleg_anwendungsfall} verwiesen. \\ 
+
+Im Zusammenhang der Generalisierung können auch Anwendungsfälle generalisiert werden. Durch einen abstrakten Anwendungsfall (\texttt{<<abstract>>} Anwendungsfall) kann man den generalisierten Anwendungsfall selbst auch unausführbar machen. Dadurch kann man den Implementierer zwingen, dass der \textit{spezialisierte Anwendungsfall} ausgeführt werden muss. Dabei werden alle \texttt{<<include>>}- und \texttt{<<extend>>}-Beziehungen des generalisierten Anwendungsfall vererbt. 
+
+\subsection{Belegsatz}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{\imgpath/ihk_beleg_anwendungsfall.png}
+  \caption{IHK-Belegsatz für UML-Anwendungsfalldiagramme}
+  \label{fig:ihk_beleg_anwendungsfall}
+\end{figure}

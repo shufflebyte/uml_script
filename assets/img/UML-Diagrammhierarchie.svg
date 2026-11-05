@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="808" height="450">
+  <title>UML Diagrammhierarchie</title>
+  <rect x="415" y="20" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="465" y="49" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;font-style:italic;">Diagramm</text>
+  <path d="M245,115 V100 H615 V115 M465,100 V85 h-6 l6,-15 l6,15 h-6" style="fill:none;stroke:black;stroke-width:1;" />
+  <rect x="195" y="115" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="245" y="136" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;font-style:italic;">Struktur-<tspan x="245" y="153">diagramm</tspan></text>
+  <rect x="565" y="115" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="615" y="136" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;font-style:italic;">Verhaltens-<tspan x="615" y="153">diagramm</tspan></text>
+  <path d="M65,285 V195 H425 V285 M125,210 V195 M185,285 V195 M365,210 V195 M305,285 V195 M245,210 V180 h-6 l6,-15 l6,15 h-6" style="fill:none;stroke:black;stroke-width:1;" />
+  <path d="M555,210 V195 H735 V285 M675,210 V195 M615,285 V180 h-6 l6,-15 l6,15 h-6" style="fill:none;stroke:black;stroke-width:1;" />
+  <rect x="75" y="210" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="125" y="231" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Klassen-<tspan x="125" y="248">diagramm</tspan></text>
+  <rect x="195" y="210" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="245" y="231" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Komponenten-<tspan x="245" y="248">diagramm</tspan></text>
+  <rect x="315" y="210" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="365" y="231" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Objekt-<tspan x="365" y="248">diagramm</tspan></text>
+  <rect x="505" y="210" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="555" y="231" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Aktivitäts-<tspan x="555" y="248">diagramm</tspan></text>
+  <rect x="622" y="210" width="106" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="675" y="231" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Anwendungsfall<tspan x="675" y="248">-diagramm</tspan></text>
+  <rect x="15" y="285" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="65" y="314" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Profildiagramm</text>
+  <rect x="135" y="285" width="100" height="60" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="185" y="304" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Kompositions-<tspan x="185" y="320">struktur-</tspan><tspan x="185" y="336">diagramm</tspan></text>
+  <rect x="255" y="285" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="305" y="306" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Verteilungs-<tspan x="305" y="323">diagramm</tspan></text>
+  <rect x="372" y="285" width="106" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="425" y="314" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Paketdiagramm</text>
+  <rect x="565" y="285" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="615" y="306" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;font-style:italic;">Interaktions-<tspan x="615" y="323">diagramm</tspan></text>
+  <rect x="685" y="285" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="735" y="306" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Zustands-<tspan x="735" y="323">diagramm</tspan></text>
+  <path d="M395,380 V365 H720 V380 M505,380 V365 M615,380 V350 h-6 l6,-15 l6,15 h-6" style="fill:none;stroke:black;stroke-width:1;" />
+  <rect x="345" y="380" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="395" y="401" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Sequenz-<tspan x="395" y="418">diagramm</tspan></text>
+  <rect x="450" y="380" width="110" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="505" y="401" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Kommunikations<tspan x="505" y="418">-diagramm</tspan></text>
+  <rect x="565" y="380" width="100" height="60" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="615" y="399" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Interaktions-<tspan x="615" y="415">übersichts-</tspan><tspan x="615" y="431">diagramm</tspan></text>
+  <rect x="670" y="380" width="100" height="50" style="fill:white;stroke:black;stroke-width:1;" />
+  <text x="720" y="401" style="fill:black;font-family:Arial,sans-serif;font-size:14;text-anchor:middle;">Zeitverlaufs-<tspan x="720" y="418">diagramm</tspan></text>
+  <polygon points="15,430 15,395 98,395 98,407 110,407 110,430 15,430" style="fill:white;stroke:black;stroke-width:1" />
+  <polygon points="98,395 98,407 110,407 98,395 " style="fill:white;stroke:black;stroke-width:1" />
+  <text x="60" y="418" style="fill:black;font-family:Arial,sans-serif;font-size:12;text-anchor:middle;font-style:italic;">Notation: UML</text>
+</svg>

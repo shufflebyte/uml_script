@@ -1,0 +1,29 @@
+\section{Anhang}
+\subsection{Rahmen in UML}
+Jedes Diagramm hat eine \textit{contents area}. Optional kann jedes Diagramm einen Frame und eine Überschrift haben, beispielsweise wie in Abb. \ref{fig:anhang_rahmen.drawio} dargestellt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\imgpath/anhang_rahmen.drawio.png}
+	\caption{Rahmen in UML}
+	\label{fig:anhang_rahmen.drawio}
+\end{figure}
+
+Rahmen werden hauptsächlich dort eingesetzt, bei dem das gezeichente Diagramm grafische Rahmenelemente hat wie z. B. entry/exit Punkte für Zustandsdiagramme. Wenn der Rahmen nicht benötigt wird, kann er weggelassen werden. Die Überschrift hat folgende Syntax:
+
+\begin{verbatim}
+[<kind>]<name>[<parameters>]
+\end{verbatim}
+
+In den meisten Fällen reicht die Art (kind) und der Name des Diagramms. Die Art muss dazu nicht ausgeschrieben werden, man kann auch Kürzel nutzen, wie sie im Standard definiert sind:
+\begin{itemize}
+	\item \textbf{act} activity frame
+	\item \textbf{cmp} component frame
+	\item \textbf{dep} deployment frame
+	\item \textbf{sd} interaction frames
+	\item \textbf{pkg} package frames
+	\item \textbf{stm} state machine frames
+	\item \textbf{uc} use case frames
+	\item (\textbf{cd} class diagramm frames)
+\end{itemize}
+\textbf{Hinweis:} Eine Definition für Klassendiagramme \textbf{cd} ist im Standard nicht definiert, in diesem Kurs einigen wir uns darauf, dass die Abkürzung gültig is. Der aktuell gültige Standard ist hier als PDF herunterladbar: \url{https://www.omg.org/spec/UML/}. Die Informationen aus diesem Kapitel sind aus \textit{Annex A: Diagrams} entnommen.
