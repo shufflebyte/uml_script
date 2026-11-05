@@ -1,8 +1,8 @@
-# BSIT_LF05_script
+# BSIT_UML_script
 
 ## Inhalt
 
-Lerninhalte Lernfeld 5
+Lerninhalte UML Script
 
 ## Kompilierung
 
@@ -12,5 +12,4 @@ Lerninhalte Lernfeld 5
 
 ## Versionen
 
-- Schuljahr 2025/2026 erste Teile erstellt
-# uml_script
+- Schuljahr 2026/2027
