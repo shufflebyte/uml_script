@@ -1,0 +1,93 @@
+% ================================================================
+% settings.tex – Pakete, Layout, Kopf-/Fußzeile (Berufsschul-Skript)
+% (Titel, Lernfeld usw. stehen in hauptdokument.tex)
+% ================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pakete %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[]{todonotes} % [disable] blendet alle \todo aus
+\usepackage{dialogue}
+\usepackage{multicol}
+\usepackage{pdfpages}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{cancel}
+
+\usepackage{enumitem}
+\usepackage{acronym}
+\usepackage{listings}
+
+% Tabellen
+\usepackage{setspace}  % Zeilenhöhe
+\usepackage{colortbl}  % Hintergrundfarben in Tabellen
+\usepackage{tabularx}
+\usepackage{array}     % z. B. \newcolumntype
+
+% Schrift: serifenlos (für Serifen die renewcommand-Zeile auskommentieren)
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Eigene Definitionen %%%%%%%%%%%%%%%%%%%%%%
+% Farben, Boxen, Listings, Aufgaben, Pfade (\imgpath, \filepath, \lstpath, \sharedpath)
+\newcommand{\basispath}{/Users/florian/workspace/latex/vorlagen/latex-basis}
+\input{\basispath/basis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Hyperref (möglichst spät laden) %%%%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=DRSblue,
+    filecolor=DRSyellow,
+    citecolor=DRSred,
+    urlcolor=DRSblue,
+    pdftitle={\scripttitel},
+    pdfpagemode=FullScreen,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Page Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=35mm,
+  left=25mm,
+  right=25mm,
+  bottom=30mm,
+  headheight=53pt  % Platz für die dreizeilige Kopfzeile mit Logo
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopf- und Fußzeilen %%%%%%%%%%%%%%%%%%%%%%
+\usepackage[headsepline, automark]{scrlayer-scrpage}
+\automark{section}
+\setheadsepline{1pt}
+\pagestyle{scrheadings}
+
+\ohead{\includegraphics[height=1.7cm]{\boxenimages/drslogo}}
+\ihead{Lernfeld \lernfeldnr : \lernfeldtext \\
+  \bildungsgang \\
+  \scripttitel
+}
+\chead{}
+
+% \leftmark = aktueller Teil, automatisch aus \section (\automark{section})
+\ifoot{Autor: \lehrkraft \\
+  Stand: \today \\
+  \leftmark}
+\cfoot{Seite \thepage\ von \pageref{LastPage}}
+%\ofoot{\thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Einstellungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Musterlösung ein-/ausblenden: \ifloesung ... \fi
+% (einschalten mit \loesungtrue in hauptdokument.tex)
+\newif\ifloesung
+
+% Kein Absatzeinzug
+\setlength{\parindent}{0pt}

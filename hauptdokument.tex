@@ -3,116 +3,21 @@
 
 \documentclass[
 11pt,
-footheight=40pt
+footheight=41pt
 ]{scrartcl}
-\usepackage{ngerman}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{listings}
-\usepackage{lastpage}
-\usepackage{float}
 
-\usepackage[]{todonotes} % disable oder leer lassen
-\usepackage{dialogue}
-
-\usepackage{multicol}
-
-\usepackage{pdfpages} % mehrseitige PDFs einbinden
-
-
-\usepackage[dvipsnames]{xcolor}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{gensymb}
-\usepackage{cancel}
-
-\usepackage{enumitem}
-\usepackage{acronym}
-\usepackage{listings}
-\usepackage{hyperref}
-% Hyperref konfigurieren
-\hypersetup{
-    colorlinks=true,
-    linkcolor=DRSblue,
-    filecolor=DRSyellow, 
-    citecolor=DRSred,     
-    urlcolor=DRSblue,
-    pdftitle={Overleaf Example},
-    pdfpagemode=FullScreen,
-}
-
-% Tabellen
-
-\usepackage{setspace} % For row height adjustments
-\usepackage{colortbl} % Für Hintergrundfarben in Tabelle
-\usepackage{tabularx}
-\usepackage{array} % For tables, z. B. für \newcolumntype
-
-% Schriftart
-\usepackage{lmodern}
-% Für serifenlose Schrift! Für Serifen (Standard) einfach auskommentieren
-% https://www.overleaf.com/learn/latex/Font_typefaces
-\renewcommand{\familydefault}{\sfdefault}
-
- % Pfade zu images, listings, boxes
-\newcommand{\imgpath}{assets/img}
-\newcommand{\filepath}{assets/files}
-\newcommand{\lstpath}{assets/listings}
-\newcommand{\vorlagenpath}{/Users/florian/workspace/vorlagen/latex/input}
-% Hier sind die Farben und Boxen definiert
-\input{\vorlagenpath/boxen}
-% Hier sind die selbst definierten Listing-Styles und Sprachen definiert
-\input{\vorlagenpath/listings}
-\input{\vorlagenpath/aufgaben}
-
-% Variablen für Titlepage und Header/Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Variablen für Titlepage und Header/Footer %%
 \newcommand{\lernfeldnr}{12}
 \newcommand{\lernfeldtext}{Ein Projekt durchführen}
 \newcommand{\bildungsgang}{Fachschinformatiker/in Anwendungsentwicklung}
 \newcommand{\scripttitel}{Grundkurs UML}
 \newcommand{\untertitel}{Begleitskript zum Unterricht}
+\newcommand{\lehrkraft}{Soulier}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pakete, Layout, eigene Definitionen %%%%%%%
+\input{settings}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Page Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{geometry}
- \geometry{
- a4paper,
- top=35mm,
- left=25mm,
- right=25mm,
- bottom=30mm
- }
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopf- und Fußzeilen %%%%%%%%%%%%%%%%%%%%%
-\usepackage[headsepline, automark]{scrlayer-scrpage}
-\automark{section}
-\setheadsepline{1pt}
-\pagestyle{scrheadings}
-
-\ohead{\includegraphics[height=1.7cm]{\boxenimages/drslogo}}
-\ihead{\scripttitel \\
-%\textbf{Begleitskript zur projektorientierten Arbeit} \\
-% \bildungsgang \\
- \leftmark}
-\chead{}
-
-\ifoot{Autor: Soulier \\ Stand: \today}
-\cfoot{Seite \thepage\ von \pageref{LastPage}}
-%\ofoot{\thepage}
-
-
- %%%%% Definition der Variablen, um Textteile ein- oder auszublenden %%%%%%
-% Entscheidung ob mit oder ohne Musterlösung
-\newif\ifloesung
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Einstellungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\parindent}{0pt}
-%\loesungtrue
-
-\newcounter{cntA}  	
-\setcounter{cntA}{0}
+%\loesungtrue   % Musterlösungen (\ifloesung ... \fi) einblenden
 
 \begin{document}
 
@@ -128,7 +33,7 @@ footheight=40pt
   %\vspace{8cm}
   %{\large \bildungsgang \par}
     \vfill
-  {\large Lehrkraft: Soulier\par}
+  {\large Lehrkraft: \lehrkraft\par}
 
   {Stand: \large\today\par}
 \end{titlepage}
@@ -136,28 +41,15 @@ footheight=40pt
 \setcounter{page}{1}           % Manuell auf 1 setzen
 \pagenumbering{arabic}         % Arabische Ziffern (1, 2, 3, ...)
 
-\begin{importantbox}{Wichtiger Hinweis}
-Dieses Skript befindet sich im Aufbau. Es ist weder vollständig, noch ist garantiert, dass es fehlerfrei ist. Informiere dich unbedingt auch im Internet oder in Büchern. Der Lehrer freut sich über Bug Reports!
-\end{importantbox}
+% Wichtiger Hinweis, Interner Gebrauch, Nutzung von LLMs
+\input{\sharedpath/foreword_llms.tex}
 
-\begin{importantbox}{Nur für den internen Gebrauch zulässig!}
-Dieses Skript ist \textbf{nicht öffentlich}! Bitte nutze das Skript zum Lernen, kritzel hinein, kopiere Teile für deine Notizen usw. Veröffentliche es aber bitte nicht im Internet oder auf den Drive eurer Firma. Im Skript sind einige Quellen noch unbenannt oder einfach nur hinein kopiert und ich muss diese erst durch selbst erzeugte Inhalte ersetzen.
-\end{importantbox}
 
 %\begin{notebox}{\dq Lehrplan \dq PC-Führerschein}
 %\textbf{Die Schülerinnen und Schüler verfügen über die Kompetenz, ...} \\
 % ...
 %\end{notebox}
 
-\begin{warningbox}{Nutzung von LLMs (Chat-GPT)}
-Die Nutzung von \acp{LLM} können wir als Lehrer weder verbieten noch die Einhaltung von Regeln diesbezüglich kontrollieren. Es ist auch nicht schlimm, dass ihr diese Technologien benutzt. \\
-
- In eurem eigenen Sinne empfehle ich euch jedoch, die \acp{LLM} sinnvoll und mit Kopf einzusetzen. Nutzt die Tools nicht, um euch das \textbf{Denken abnehmen zu lassen}, sondern um euer \textbf{Denken zu unterstützen}.  \\ 
- 
- \textbf{Lernen geschieht durch Selbermachen} und lasst ihr euch jeden kreativen und anstrengenden Prozess abnehmen, werdet ihr deutlich weniger lernen und nachhaltig behalten, als ihr könntet, wenn ihr eure Denkmuskeln benutzt hättet. \\
- 
-Besteht bei Abgaben der Verdacht, dass die Lösung LLM-generiert ist, behält sich die Lehrkraft eine \textbf{mündliche Prüfung} an der Tafel oder einen Test auf Papier vor.
-\end{warningbox}
 
 %\begin{tipbox}{Informationsquellen}
 %\begin{itemize}
